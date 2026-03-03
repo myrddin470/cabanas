@@ -46,7 +46,7 @@ nav a{
 
 .hero{
   position:relative;
-  height:100vh;
+  height:85vh;
   overflow:hidden;
   display:flex;
   align-items:center;
@@ -55,6 +55,8 @@ nav a{
 }
 .hero video{
   position:absolute;
+   top:0;
+  left:0;
   width:100%;
   height:100%;
   object-fit:cover;
@@ -76,6 +78,43 @@ nav a{
   opacity: 0;
   transform: translateY(20px);
 }
+
+/* HERO LOGO CARDS */
+
+.hero-cards{
+  display:flex;
+  gap:40px;
+  justify-content:center;
+  align-items:center;
+  margin-bottom:40px;
+  flex-wrap:wrap;
+}
+
+.hero-card{
+  background:rgba(255,255,255,0.15);
+  backdrop-filter:blur(8px);
+  border-radius:14px;
+  padding:30px 40px;
+  width:220px;
+  height:140px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  transition:all 0.3s ease;
+}
+
+.hero-card:hover{
+  transform:translateY(-8px);
+  background:rgba(255,255,255,0.25);
+}
+
+.hero-card img{
+  max-width:100%;
+  max-height:80px;
+  object-fit:contain;
+}
+
+
 
 .hero-content p {
   font-family: 'Poppins', sans-serif;
@@ -231,6 +270,94 @@ footer{
 input:checked + .slider{background:#0d2c54;}
 input:checked + .slider:before{transform:translateX(22px);}
 .modal-actions{text-align:right;margin-top:25px;}
+
+
+/* ===== CONTACTO PREMIUM ===== */
+
+.contact-section{
+  padding:0;
+  margin-top:60px;
+}
+
+.contact-wrapper{
+  display:flex;
+  min-height:600px;
+}
+
+.contact-map{
+  flex:1;
+}
+
+.contact-map iframe{
+  width:100%;
+  height:100%;
+  border:0;
+  filter:grayscale(100%) contrast(1.1);
+}
+
+.contact-info{
+  flex:1;
+  background:#111;
+  color:#fff;
+  padding:80px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.contact-info h2{
+  font-size:2.5rem;
+  margin-bottom:40px;
+  font-family:'Poppins', sans-serif;
+}
+
+.contact-item{
+  margin-bottom:30px;
+}
+
+.contact-item h4{
+  font-size:0.9rem;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  opacity:0.6;
+  margin-bottom:8px;
+}
+
+.contact-item p{
+  font-size:1.1rem;
+  line-height:1.6;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+
+  .contact-wrapper{
+    flex-direction:column;
+  }
+
+  .contact-map{
+    height:300px;
+  }
+
+  .contact-info{
+    padding:50px 30px;
+  }
+
+}
+
+.contact-map{
+  position:relative;
+}
+
+.contact-map::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.2);
+  pointer-events:none;
+}
+
+
 </style>
 </head>
 
@@ -249,12 +376,29 @@ input:checked + .slider:before{transform:translateX(22px);}
 
 <div class="hero">
   <video autoplay muted loop playsinline>
-    <source src="video/actyon.mp4" type="video/mp4">
+    <source src="video/subaru.mp4" type="video/mp4">
   </video>
-  <div class="hero-content">
-    <p>Subaru · KGM · Zontes · Vehículos de Ocasión</p>
-    <a href="#productos" class="btn-primary">Conoce más</a>
+ 
+
+<div class="hero-content">
+  <div class="hero-cards">
+    <div class="hero-card">
+      <img src="img/logo-subaru.png" alt="Subaru">
+    </div>
+    <div class="hero-card">
+      <img src="img/logo-kgm.png" alt="KGM">
+    </div>
+    <div class="hero-card">
+      <img src="img/logo-zontes.png" alt="Zontes">
+    </div>
   </div>
+
+  <a href="#productos" class="btn-primary">Conoce más</a>
+</div>
+
+
+
+
 </div>
 
 <section id="productos">
@@ -312,9 +456,50 @@ input:checked + .slider:before{transform:translateX(22px);}
   </div>
 </section>
 
-<section id="contacto">
-  <h2 style="text-align:center;">Contacto</h2>
-  <p style="text-align:center;margin-top:20px;">info@cabanasmotor.com · 900 000 000</p>
+<section id="contacto" class="contact-section">
+
+  <div class="contact-wrapper">
+
+    <!-- MAPA -->
+    <div class="contact-map">
+      <iframe 
+        src="https://www.google.com/maps?q=Cabana+Motor&output=embed"
+        loading="lazy"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <!-- INFO -->
+    <div class="contact-info">
+      <h2>Contacto</h2>
+
+      <div class="contact-item">
+        <h4>Dirección</h4>
+        <p>Calle Ejemplo 123<br>Madrid, España</p>
+      </div>
+
+      <div class="contact-item">
+        <h4>Teléfono</h4>
+        <p>900 000 000</p>
+      </div>
+
+      <div class="contact-item">
+        <h4>Email</h4>
+        <p>info@cabanasmotor.com</p>
+      </div>
+
+      <div class="contact-item">
+        <h4>Horario</h4>
+        <p>
+          Lunes a Viernes: 9:00 - 20:00<br>
+          Sábados: 10:00 - 14:00
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
 
 <footer>© 2026 CABANAS MOTOR S.L.</footer>
@@ -429,32 +614,6 @@ document.body.classList.remove("modal-open");
 
 
 
-<script>
-  // Esperamos a que se cargue la página
-  document.addEventListener('DOMContentLoaded', () => {
-    const hero = document.querySelector('.hero');
-    const video = document.querySelector('.hero video');
-
-    // Cuando el video carga metadata (tamaño real)
-    video.addEventListener('loadedmetadata', () => {
-      // Ancho de pantalla
-      const screenWidth = window.innerWidth;
-      // Proporción real del video
-      const videoAspect = video.videoWidth / video.videoHeight;
-      // Calculamos altura proporcional
-      const videoHeight = screenWidth / videoAspect;
-      // Aplicamos altura al contenedor hero
-      hero.style.height = videoHeight + 'px';
-    });
-
-    // Opcional: recalcular si se redimensiona la ventana
-    window.addEventListener('resize', () => {
-      const videoAspect = video.videoWidth / video.videoHeight;
-      const videoHeight = window.innerWidth / videoAspect;
-      hero.style.height = videoHeight + 'px';
-    });
-  });
-</script>
 
 </body>
 </html>
