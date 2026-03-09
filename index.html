@@ -33,7 +33,9 @@ header.scrolled{
 }
 
 .logo{position:absolute;left:70px;top:0;}
-.logo img{height:130px;position:absolute;top:15px;}
+
+
+ .logo img{height:130px;position:absolute;top:15px;}
 
 nav{display:flex;gap:35px;}
 nav a{
@@ -170,6 +172,13 @@ nav a{
   .hero-card{
     width:45%; /* dos logos por fila */
     margin-bottom:20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo img {
+    height: 70px; /* más pequeño y proporcional */
+    top: 10px;    /* reduce margen superior */
   }
 }
 
