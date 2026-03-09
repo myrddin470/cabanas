@@ -175,12 +175,23 @@ nav a{
   }
 }
 
+
+
 @media (max-width: 768px) {
+  .logo {
+    left: 50%;                  /* centro horizontal */
+    transform: translateX(-50%); /* ajustar según ancho del logo */
+    top: 10px;                   /* opcional, más compacto */
+  }
+
   .logo img {
-    height: 70px; /* más pequeño y proporcional */
-    top: 10px;    /* reduce margen superior */
+    height: 70px;                /* tamaño proporcional en móvil */
   }
 }
+
+
+
+
 
 .btn-outline{
   padding:10px 20px;
