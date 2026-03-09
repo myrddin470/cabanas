@@ -176,16 +176,14 @@ nav a{
 }
 
 @media (max-width: 768px) {
-  header {
-    justify-content: center; /* centra flex children horizontalmente */
+  .logo {
+    position: absolute;       /* mantener absoluto */
+    left: 50%;                /* centro horizontal relativo al header */
+    transform: translateX(-50%); /* compensar ancho del logo */
+    top: 10px;                /* un poco más compacto */
   }
 
-@media (max-width: 768px) {
-  .logo {
-    left: 50%;                  /* centro horizontal */
-    transform: translateX(-50%); /* ajustar según ancho del logo */
-    top: 10px;                   /* opcional, más compacto */
-  }
+
 
   .logo img {
     height: 70px;                /* tamaño proporcional en móvil */
