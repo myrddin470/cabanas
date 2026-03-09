@@ -83,24 +83,30 @@ nav a{
 
 .hero-cards{
   display:flex;
-  gap:40px;
+  gap:30px; /* un poco menos para 4 logos */
   justify-content:center;
   align-items:center;
   margin-bottom:40px;
-  flex-wrap:wrap;
+  flex-wrap:wrap; /* permite que baje a dos filas en móviles */
 }
 
 .hero-card{
   background:rgba(255,255,255,0.15);
   backdrop-filter:blur(8px);
   border-radius:14px;
-  padding:30px 40px;
-  width:220px;
-  height:140px;
+  padding:20px; /* igual para todos */
+  width:180px;  /* ancho uniforme */
+  height:120px; /* altura uniforme */
   display:flex;
   justify-content:center;
   align-items:center;
   transition:all 0.3s ease;
+}
+
+.hero-card img{
+  max-width:100%;
+  max-height:80px;
+  object-fit:contain;
 }
 
 .hero-card:hover{
@@ -156,7 +162,16 @@ nav a{
     font-size: 0.9rem;
   }
 }
-
+@media (max-width: 768px) {
+  .hero-cards{
+    gap:15px;
+    flex-wrap:wrap;
+  }
+  .hero-card{
+    width:45%; /* dos logos por fila */
+    margin-bottom:20px;
+  }
+}
 
 .btn-outline{
   padding:10px 20px;
@@ -391,6 +406,11 @@ input:checked + .slider:before{transform:translateX(22px);}
     <div class="hero-card">
       <img src="img/logo-zontes.png" alt="Zontes">
     </div>
+ <div class="hero-card">
+    <img src="img/logo-honda.png" alt="Nueva Marca">
+  </div>
+
+    
   </div>
 
   <a href="#productos" class="btn-primary">Conoce más</a>
