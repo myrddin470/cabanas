@@ -221,6 +221,11 @@ section{padding:60px 80px;scroll-margin-top:90px;}
   padding-bottom:30px;
   opacity:0;
   transform:translateY(20px);
+
+display:block;            /* importante para que funcione como tarjeta */
+  text-decoration:none;     /* quitar subrayado */
+  color:inherit;
+
 }
 .card img{width:100%;height:240px;object-fit:cover;}
 .card h3{margin:20px 0 10px;}
@@ -418,18 +423,24 @@ input:checked + .slider:before{transform:translateX(22px);}
 
 <div class="hero-content">
   <div class="hero-cards">
-    <div class="hero-card">
-      <img src="img/logo-subaru.png" alt="Subaru">
-    </div>
-    <div class="hero-card">
-      <img src="img/logo-kgm.png" alt="KGM">
-    </div>
-    <div class="hero-card">
-      <img src="img/logo-zontes.png" alt="Zontes">
-    </div>
- <div class="hero-card">
+
+  <a href="https://www.subaru.es/" target="_blank" rel="noopener noreferrer" class="hero-card">
+    <img src="img/logo-subaru.png" alt="Subaru">
+  </a>
+
+  <a href="https://kgm.com.es/" target="_blank" rel="noopener noreferrer" class="hero-card">
+    <img src="img/logo-kgm.png" alt="KGM">
+  </a>
+
+  <a href="https://zontesmotos.es/" target="_blank" rel="noopener noreferrer" class="hero-card">
+    <img src="img/logo-zontes.png" alt="Zontes">
+  </a>
+
+  <a href="https://www.honda.es/cars/concesionarios/cabanas-motor-honda-leon.html" target="_blank" rel="noopener noreferrer" class="hero-card">
     <img src="img/logo-honda.png" alt="Nueva Marca">
-  </div>
+  </a>
+
+</div>
 
     
   </div>
@@ -485,9 +496,15 @@ input:checked + .slider:before{transform:translateX(22px);}
       <p>Planes personalizados adaptados a cada cliente.</p>
     </div>
     <div class="card">
+      
+ <a href="https://www.honda.es/cars/concesionarios/cabanas-motor-honda-leon.html" target="_blank" rel="noopener noreferrer" class="card">
       <img src="img/TALLER.png">
       <h3>Servicio posventa HONDA</h3>
       <p>Mantenimiento con garantía oficial.</p>
+    </a>
+
+
+
     </div>
     <div class="card">
       <img src="img/SEGUROS.png">
@@ -554,7 +571,7 @@ input:checked + .slider:before{transform:translateX(22px);}
     <div class="cookie-actions">
       <button id="rejectAll" class="btn-outline">Rechazar</button>
       <button id="configCookies" class="btn-outline">Configurar</button>
-      <button id="acceptAll" class="btn-primary">Aceptar</button>
+      <button id="acceptAll" class="btn-outline">Aceptar</button>
     </div>
   </div>
 </div>
